@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b0f">
+  <title>VL STUDIO — Create. Build. Design.</title>
+  <meta name="description" content="VL STUDIO — Roblox map, clothing, creative services, and community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark">VL</span><span><b>VL STUDIO</b><small>CREATIVE DIGITAL STUDIO</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home" class="active">HOME</a><a href="#maps">MAP</a><a href="#store">STORE</a><a href="#team">TEAM</a><a href="#support">SUPPORT</a>
+      <button class="nav-admin" id="openLogin">OWNER LOGIN ↗</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><i></i> INDEPENDENT CREATIVE STUDIO</div>
+        <h1>WE BUILD<br><span>YOUR VISION.</span></h1>
+        <p class="hero-lead">Selamat datang di VL STUDIO — ruang kreatif untuk membangun pengalaman Roblox, menghadirkan desain pakaian, dan mewujudkan ide digital.</p>
+        <div class="hero-actions"><a class="btn primary" href="#maps">JELAJAHI KARYA <b>↗</b></a><a class="btn ghost" href="#store">LIHAT STORE</a></div>
+        <div class="hero-meta"><span>01 / CREATIVE</span><span>MAP · CLOTHING · DIGITAL SERVICE</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-monogram">VL<span>.</span></div>
+        <div class="art-label label-top">CREATIVE<br>WITHOUT LIMITS</div><div class="art-label label-bottom">EST. <span>VL STUDIO</span></div>
+        <div class="art-glow"></div>
+      </div>
+    </section>
+
+    <section class="intro section">
+      <div class="section-kicker">01 — ABOUT US</div>
+      <div class="intro-grid"><h2>IDEA BESAR.<br><span>EKSEKUSI NYATA.</span></h2><div><p>VL STUDIO adalah studio kreatif yang berfokus pada pengembangan map Roblox, desain pakaian, dan layanan kreatif digital. Kami menggabungkan kreativitas, detail, dan pengalaman komunitas untuk menghasilkan karya yang punya karakter.</p><p class="muted">Dari konsep awal hingga hasil akhir, setiap proyek dibuat dengan tujuan menghadirkan pengalaman yang berkesan.</p></div></div>
+      <div class="stats"><div><b>01</b><span>MAP DEVELOPMENT</span></div><div><b>02</b><span>CLOTHING DESIGN</span></div><div><b>03</b><span>CREATIVE SERVICE</span></div></div>
+    </section>
+
+    <section class="section content-section" id="maps">
+      <div class="section-heading"><div><div class="section-kicker">02 — OUR PROJECTS</div><h2>MAP <span>SHOWCASE</span></h2><p>Kumpulan dunia dan pengalaman yang dikembangkan VL STUDIO.</p></div><span class="counter" id="mapCount">0 PROJECTS</span></div>
+      <div class="card-grid" id="mapGrid"><div class="empty-state">Map akan ditampilkan di sini setelah ditambahkan oleh owner.</div></div>
+    </section>
+
+    <section class="section content-section store-section" id="store">
+      <div class="section-heading"><div><div class="section-kicker">03 — SHOP & SERVICES</div><h2>THE <span>STORE</span></h2><p>Produk dan layanan kreatif dari VL STUDIO.</p></div><span class="counter" id="productCount">0 ITEMS</span></div>
+      <div class="store-cats"><span>ALL</span><span>ROBLOX CLOTHING</span><span>ROBux</span><span>MAP SERVICE</span><span>DESIGN SERVICE</span></div>
+      <div class="card-grid" id="productGrid"><div class="empty-state">Produk dan layanan akan ditampilkan di sini.</div></div>
+      <p class="tiny-note">Transaksi dan pemesanan dilakukan melalui tautan resmi yang dicantumkan pada setiap produk. Pastikan detail pesanan dan ketentuan disepakati sebelum membayar.</p>
+    </section>
+
+    <section class="section content-section" id="team">
+      <div class="section-heading"><div><div class="section-kicker">04 — THE PEOPLE</div><h2>MEET THE <span>TEAM</span></h2><p>Orang-orang di balik karya VL STUDIO.</p></div></div>
+      <div class="team-grid" id="teamGrid"><div class="empty-state">Struktur team akan ditampilkan di sini.</div></div>
+    </section>
+
+    <section class="support section" id="support">
+      <div class="support-panel"><div class="section-kicker">05 — STAY CONNECTED</div><h2>SUPPORT<br><span>THE STUDIO.</span></h2><p>Ikuti perjalanan kami, dukung karya, dan bergabung dengan komunitas VL STUDIO.</p><div class="support-links" id="supportLinks"><span class="muted">Link support akan diatur melalui Owner Panel.</span></div></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#home"><span class="brand-mark">VL</span><span><b>VL STUDIO</b><small>CREATE. BUILD. DESIGN.</small></span></a><span>© <span id="year"></span> VL STUDIO. ALL RIGHTS RESERVED.</span><a href="#home">BACK TO TOP ↑</a></footer>
+
+  <div class="modal hidden" id="loginModal">
+    <div class="modal-card login-card"><button class="modal-close" data-close="loginModal">×</button><div class="section-kicker">PRIVATE ACCESS</div><h2>OWNER <span>LOGIN</span></h2><p class="muted">Masuk untuk mengelola konten website VL STUDIO.</p>
+      <form id="loginForm"><label>Email owner<input type="email" id="loginEmail" placeholder="owner@email.com" required autocomplete="username"></label><label>Kata sandi<input type="password" id="loginPassword" placeholder="Masukkan kata sandi" required autocomplete="current-password"></label><button class="btn primary full" type="submit">MASUK KE DASHBOARD ↗</button><div class="form-message" id="loginMessage"></div></form>
+    </div>
+  </div>
+
+  <div class="admin-shell hidden" id="adminShell">
+    <aside class="admin-sidebar"><a class="brand" href="#"><span class="brand-mark">VL</span><span><b>VL STUDIO</b><small>OWNER DASHBOARD</small></span></a><div class="admin-label">MANAGEMENT</div><button class="side-link selected" data-tab="overview">▦ Overview</button><button class="side-link" data-tab="mapsAdmin">▧ Manage Maps</button><button class="side-link" data-tab="productsAdmin">◇ Manage Store</button><button class="side-link" data-tab="teamAdmin">♙ Manage Team</button><button class="side-link" data-tab="supportAdmin">↗ Support Links</button><button class="side-link" data-tab="homeAdmin">⌂ Home Content</button><div class="sidebar-bottom"><span id="ownerEmail"></span><button id="logoutBtn" class="logout">LOG OUT ↗</button></div></aside>
+    <div class="admin-main"><div class="admin-top"><div><div class="section-kicker">VL STUDIO / CONTROL CENTER</div><h2 id="adminTitle">OVERVIEW</h2></div><button class="btn ghost small" id="viewSite">VIEW WEBSITE ↗</button></div>
+      <div class="admin-content">
+        <div class="admin-tab" id="tab-overview"><div class="admin-stats"><div class="admin-stat"><span>MAP PROJECTS</span><b id="dashMaps">0</b></div><div class="admin-stat"><span>STORE ITEMS</span><b id="dashProducts">0</b></div><div class="admin-stat"><span>TEAM MEMBERS</span><b id="dashTeam">0</b></div></div><div class="admin-welcome"><div class="section-kicker">WELCOME BACK</div><h3>YOUR STUDIO.<br><span>YOUR CONTROL.</span></h3><p>Kelola map, produk, struktur team, tautan support, dan informasi halaman utama dari satu tempat.</p></div></div>
+        <div class="admin-tab hidden" id="tab-mapsAdmin"><div class="tab-head"><div><h3>MAP PROJECTS</h3><p>Tambah atau perbarui showcase map.</p></div><button class="btn primary small" data-add="map">+ ADD MAP</button></div><div id="adminMaps" class="admin-list"></div></div>
+        <div class="admin-tab hidden" id="tab-productsAdmin"><div class="tab-head"><div><h3>STORE ITEMS</h3><p>Kelola produk dan jasa.</p></div><button class="btn primary small" data-add="product">+ ADD ITEM</button></div><div id="adminProducts" class="admin-list"></div></div>
+        <div class="admin-tab hidden" id="tab-teamAdmin"><div class="tab-head"><div><h3>TEAM STRUCTURE</h3><p>Atur anggota dan jabatan.</p></div><button class="btn primary small" data-add="team">+ ADD MEMBER</button></div><div id="adminTeam" class="admin-list"></div></div>
+        <div class="admin-tab hidden" id="tab-supportAdmin"><div class="tab-head"><div><h3>SUPPORT LINKS</h3><p>Atur tautan donasi dan komunitas.</p></div><button class="btn primary small" data-add="support">+ ADD LINK</button></div><div id="adminSupport" class="admin-list"></div></div>
+        <div class="admin-tab hidden" id="tab-homeAdmin"><div class="tab-head"><div><h3>HOME CONTENT</h3><p>Ubah perkenalan singkat di halaman utama.</p></div></div><form id="homeForm" class="editor-form"><label>Headline<input id="homeHeadline" maxlength="90"></label><label>Deskripsi<textarea id="homeDescription" rows="4" maxlength="500"></textarea></label><button class="btn primary" type="submit">SAVE HOME CONTENT</button><div class="form-message" id="homeMessage"></div></form></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="editorModal"><div class="modal-card editor-card"><button class="modal-close" data-close="editorModal">×</button><div class="section-kicker">CONTENT MANAGEMENT</div><h2 id="editorTitle">ADD ITEM</h2><form id="editorForm" class="editor-form"><div id="editorFields"></div><button class="btn primary full" type="submit">SAVE CHANGES</button><div class="form-message" id="editorMessage"></div></form></div></div>
+  <div class="toast" id="toast"></div>
+  <script type="module" src="./app.js"></script>
+</body></html>

@@ -1,0 +1,18 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isOwner() {
+      return request.auth != null
+        && request.auth.token.email == "alifrizkyefendi@gmail.com"
+        && request.auth.token.email_verified == true;
+    }
+    match /{folder}/{fileName} {
+      allow read: if folder in ["map", "product"];
+      allow write: if isOwner()
+        && folder in ["map", "product"]
+        && request.resource.size < 8 * 1024 * 1024
+        && request.resource.contentType.matches("image/.*");
+      allow delete: if isOwner() && folder in ["map", "product"];
+    }
+  }
+}

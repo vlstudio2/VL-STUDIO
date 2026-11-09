@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner() {
+      return request.auth != null
+        && request.auth.token.email == "alifrizkyefendi@gmail.com"
+        && request.auth.token.email_verified == true;
+    }
+    // Konten website dapat dibaca publik, hanya owner terverifikasi yang dapat mengubahnya.
+    match /{collection}/{document} {
+      allow read: if collection in ["maps", "products", "team", "support", "settings"];
+      allow create, update, delete: if isOwner()
+        && collection in ["maps", "products", "team", "support", "settings"];
+    }
+  }
+}
